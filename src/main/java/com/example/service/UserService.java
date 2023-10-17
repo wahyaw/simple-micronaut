@@ -23,4 +23,14 @@ public class UserService {
     public List<UserEntity> getAllUsers() {
         return userRepository.findAll();
     }
+
+    // for testing only
+    public void clean(){
+        userRepository.deleteAll();
+    }
+
+    // for testing only
+    public void addAll(List<UserEntity> users) {
+        userRepository.saveAll(users);
+    }
 }
