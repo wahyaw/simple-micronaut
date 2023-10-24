@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.dto.UserRequestDto;
 import com.example.entity.UserEntity;
 import com.example.service.UserService;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
@@ -38,12 +39,23 @@ class UserServiceTest {
     }
 
     @Test
-    void testComputeNumToSquare() {
+    void testGetAllUser() {
         final List<UserEntity> allUsers = userService.getAllUsers();
 
         Assertions.assertEquals(
                 allUsers.size(),
                 10
+        );
+    }
+
+    @Test
+    void testSaveNewUser() {
+        UserRequestDto requestDto = new UserRequestDto("asdfghjkl", "BjRYa");
+        final UserEntity user = userService.save(requestDto);
+
+        Assertions.assertEquals(
+                user.getUsername(),
+                "asdfghjkl"
         );
     }
 
