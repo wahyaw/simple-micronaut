@@ -128,6 +128,13 @@
       <artifactId>postgresql</artifactId>
       <scope>runtime</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/io.micronaut.test/micronaut-test-rest-assured -->
+    <dependency>
+      <groupId>io.micronaut.test</groupId>
+      <artifactId>micronaut-test-rest-assured</artifactId>
+      <version>4.0.2</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
